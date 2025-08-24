@@ -3,10 +3,39 @@
   "info": {
     "title": "Lendsqr Wallet Service API",
     "version": "1.0.0",
+    "description": "Comprehensive API documentation for the Lendsqr Wallet Service. This service provides secure user management with blacklist verification and comprehensive wallet operations including funding, transfers, and withdrawals. Built with Node.js, TypeScript, Express.js, and MySQL.",
+    "contact": {
+      "name": "Tijani Sheu",
+      "email": "tijani.sheu@example.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    { 
+      "url": "http://localhost:5000",
+      "description": "Development server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Users",
+      "description": "User management operations including creation and blacklist verification"
+    },
+    {
+      "name": "Wallet",
+      "description": "Wallet operations for funding, transfers, and withdrawals"
+    }
+  ],api": "3.0.0",
+  "info": {
+    "title": "Lendsqr Wallet Service API",
+    "version": "1.0.0",
     "description": "OpenAPI documentation for the Lendsqr Wallet Service."
   },
   "servers": [
-    { "url": "http://localhost:3000" }
+    { "url": "http://localhost:5000" }
   ],
   "paths": {
     "/api/users": {
