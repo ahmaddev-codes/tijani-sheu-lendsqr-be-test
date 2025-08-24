@@ -88,7 +88,6 @@ heroku open
 
 1. Test all endpoints:
 
-   - `GET /api/users` - Should work
    - `POST /api/users` - Create user
    - `POST /api/wallet/fund` - Fund wallet
    - `POST /api/wallet/transfer` - Transfer funds
@@ -106,11 +105,5 @@ heroku open
 - **Database Connection**: Verify `CLEARDB_DATABASE_URL` is set
 - **App Crashes**: Check if all environment variables are set
 - **Port Issues**: Heroku automatically sets PORT, don't override it
-
-## Costs
-
-- **App**: Free tier available (limited hours)
-- **ClearDB**: Free tier has 5MB limit, upgrade as needed
-- **Custom Domain**: Free with verification
 
 Your app URL will be: `https://your-app-name.herokuapp.com`
