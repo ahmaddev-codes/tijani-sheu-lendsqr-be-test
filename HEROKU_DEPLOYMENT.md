@@ -20,19 +20,21 @@ heroku login
 heroku create your-app-name
 ```
 
-### 3. Add ClearDB MySQL Add-on
+### 3. Add JawsDB MySQL Add-on (Free)
 
 ```bash
-heroku addons:create cleardb:ignite
+heroku addons:create jawsdb:kitefin
 ```
+
+_Note: ClearDB is no longer available, but JawsDB provides free MySQL hosting_
 
 ### 4. Get Database URL
 
 ```bash
-heroku config:get CLEARDB_DATABASE_URL
+heroku config:get JAWSDB_URL
 ```
 
-This will show something like: `mysql://username:password@hostname/database_name?reconnect=true`
+This will show something like: `mysql://username:password@hostname:3306/database_name`
 
 ### 5. Set Environment Variables
 
@@ -63,7 +65,7 @@ git push heroku main
 ```bash
 # You'll need to run your SQL migrations on Heroku
 # Option 1: Use Heroku's MySQL console
-heroku addons:open cleardb
+heroku addons:open jawsdb
 
 # Option 2: Connect directly and run migrations.sql
 # Get database credentials first:
@@ -79,7 +81,7 @@ heroku open
 
 ## Important Notes
 
-- **Database**: The app is configured to automatically use `CLEARDB_DATABASE_URL` when available
+- **Database**: The app is configured to automatically use `JAWSDB_URL` (or `CLEARDB_DATABASE_URL` for backwards compatibility) when available
 - **Port**: Heroku automatically sets the `PORT` environment variable
 - **Logs**: View logs with `heroku logs --tail`
 - **Scale**: The app starts with 1 dyno, scale with `heroku ps:scale web=1`
@@ -102,7 +104,7 @@ heroku open
 ## Troubleshooting
 
 - **Build Fails**: Check `heroku logs --tail` for errors
-- **Database Connection**: Verify `CLEARDB_DATABASE_URL` is set
+- **Database Connection**: Verify `JAWSDB_URL` is set
 - **App Crashes**: Check if all environment variables are set
 - **Port Issues**: Heroku automatically sets PORT, don't override it
 
