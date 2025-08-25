@@ -2,10 +2,12 @@ import knex from "knex";
 import dotenv from "dotenv";
 dotenv.config();
 
-// Parse CLEARDB_DATABASE_URL if available (Heroku ClearDB format)
+// Parse JAWSDB_URL (Heroku JawsDB) or CLEARDB_DATABASE_URL if available
 let connectionConfig;
-if (process.env.CLEARDB_DATABASE_URL) {
-  const url = new URL(process.env.CLEARDB_DATABASE_URL);
+if (process.env.JAWSDB_URL || process.env.CLEARDB_DATABASE_URL) {
+  const databaseUrl =
+    process.env.JAWSDB_URL || process.env.CLEARDB_DATABASE_URL;
+  const url = new URL(databaseUrl!);
   connectionConfig = {
     host: url.hostname,
     user: url.username,
