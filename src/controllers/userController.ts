@@ -7,7 +7,7 @@ export async function createUser(req: Request, res: Response) {
   // Check blacklist via Adjutor API
   try {
     const karmaRes = await axios.get(
-      `https://adjutor.lendsqr.com/v2/verification/karma/0zspgifzbo.ga?email=${email}`,
+      `${process.env.ADJUTOR_KARMA_URL}?email=${email}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.ADJUTOR_API_KEY}`,
